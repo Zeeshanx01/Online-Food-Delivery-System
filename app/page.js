@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Restaurants from "@/components/Restaurants";
-
 export default function Home() {
   return (
     <div>
+
+      <AdminSideBar />
+
       <div className="h-full">
         {/* <!--Nav--> */}
 
@@ -13,14 +15,14 @@ export default function Home() {
           {/* <!--Left Col--> */}
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
-              Order
+              Orderr
               <span className="bg-clip-text mx-1 text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
                 your food
               </span>
               from anywhere
             </h1>
             <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
-            It's the food and groceries you love, delivered
+              It's the food and groceries you love, delivered
             </p>
 
             <form className="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
@@ -50,7 +52,7 @@ export default function Home() {
 
 
 
-          
+
 
 
 
