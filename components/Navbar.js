@@ -44,7 +44,7 @@ const Navbar = () => {
         <li>
           <Link href="/restaurants" className=""><img width={'50'} src="/restaurant.gif" alt="home" /></Link>
         </li>
-        
+
         <li>
           <Link href="/products" className=""><img width={'50'} src="/food.gif" alt="home" /></Link>
         </li>
@@ -67,6 +67,9 @@ const Navbar = () => {
               </div>
 
               <ul className="py-2 text-sm text-slate-400 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                <li>
+                  <Link onClick={() => { setshowDropdown(!showDropdown) }} href="/admin" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Admin page</Link>
+                </li>
                 <li>
                   <Link onClick={() => { setshowDropdown(!showDropdown) }} href="/dashboard" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
                 </li>
