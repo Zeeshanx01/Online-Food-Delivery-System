@@ -28,10 +28,10 @@ export default async function handler(req, res) {
 
   // const { name, email, password, address } = userdata;
   // const id = '1'
-  const name = 'Zeeshan22'
-  const email = 'Zeeshan@2'
-  const password = '12312'
-  const address = 'abcstreet222'
+  const name = 'Zeeshan221324432'
+  const email = 'Zeeshan@2432'
+  const password = '12312432'
+  const address = 'abcstreet222432'
   console.log(name);
   if (!name || !email || !password || !address) {
     return res.status(400).json({ error: 'Missing required fields' });
