@@ -1,5 +1,4 @@
 // pages/api/read.js
-'use client'
 import { createConnection } from 'mysql2/promise';
 
 // Function to create a MySQL connection

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Restaurants from "@/components/Restaurants";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/app/admin/components/Sidebar";
 
 export default function Home() {
   return (
