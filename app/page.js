@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Restaurants from "@/components/Restaurants";
+import Sidebar from "@/components/Sidebar";
+
 export default function Home() {
   return (
     <div>
 
-      <AdminSideBar />
+      {/* <Sidebar /> */}
 
       <div className="h-full">
         {/* <!--Nav--> */}
