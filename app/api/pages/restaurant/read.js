@@ -1,14 +1,15 @@
 // pages/api/read.js
+'use client'
 import { createConnection } from 'mysql2/promise';
 
 // Function to create a MySQL connection
 async function connectToDatabase() {
   return createConnection({
-    host: '127.0.0.1',
-    port: '2206',
-    user: 'root',
-    password: 'root',
-    database: 'ofds',
+    host: process.env.DB_HOST ,
+    port: process.env.DB_PORT, 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   });
 }
 

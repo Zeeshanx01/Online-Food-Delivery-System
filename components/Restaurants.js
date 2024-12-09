@@ -6,7 +6,7 @@ const Restaurants = () => {
 
   useEffect(() => {
     async function fetchRestaurants() {
-      const res = await fetch('http://localhost:3000/api/read');
+      const res = await fetch('http://localhost:3000/app/api/pages/restaurant/read');
       const data = await res.json();
       setRestaurants(data);
       console.log(data);

@@ -7,16 +7,16 @@ import { createConnection } from 'mysql2/promise';
 // Function to create a MySQL connection
 async function connectToDatabase() {
   return createConnection({
-    host: '127.0.0.1',
-    port: '2206', // Use default MySQL port
-    user: 'root',
-    password: 'root',
-    database: 'ofds',
+    host: process.env.DB_HOST ,
+    port: process.env.DB_PORT, 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   });
 }
 
 export default async function handler(req, res) {
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
 
   if (req.method !== 'POST') {
     console.log(req);
@@ -28,10 +28,10 @@ export default async function handler(req, res) {
 
   // const { name, email, password, address } = userdata;
   // const id = '1'
-  const name = session.user.name
-  const email = session.user.email
-  const password = '1231'
-  const address = 'abcstreet2'
+  const name = 'Zeeshan22'
+  const email = 'Zeeshan@2'
+  const password = '12312'
+  const address = 'abcstreet222'
   console.log(name);
   if (!name || !email || !password || !address) {
     return res.status(400).json({ error: 'Missing required fields' });
