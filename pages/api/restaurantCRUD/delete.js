@@ -1,4 +1,3 @@
-// pages/api/read.js
 import { createConnection } from 'mysql2/promise';
 
 // Function to create a MySQL connection
@@ -11,31 +10,39 @@ async function connectToDatabase() {
     database: process.env.DB_NAME,
   });
 }
-
-
+// Delete restaurant API route
 export default async function handler(req, res) {
-  if (req.method !== 'GET') {
+  if (req.method !== 'DELETE') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
-  
+
+  // const { id } = req.body;
+  // console.log(req.body)
+
+  const id = 2
+
+  if (!id) {
+    return res.status(400).json({ error: 'id is required in the request body.' });
+  }
+
   try {
     // Connect to the database
     const connection = await connectToDatabase();
-    // Execute a query to retrieve data from the "User" table
-    const [rows] = await connection.execute('SELECT * FROM restaurants',);
 
-    // Check if the User exists
-    if (rows.length === 0) {
-      return res.status(404).json({ error: 'User not found.' });
-    }
+    // Execute a query to delete the restaurant from the "restaurants" table
+    const [result] = await connection.execute('DELETE FROM restaurants WHERE id = ?', [id]);
 
     // Close the database connection
     await connection.end();
 
-    // Respond with the User data
-    res.status(200).json(rows);
-  } 
-  catch (error) {
+    // Check if the restaurant was deleted successfully
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'restaurant not found.' });
+    }
+
+    // Respond with a success message
+    res.status(200).json({ message: 'restaurant deleted successfully' });
+  } catch (error) {
     console.error('Error connecting to the database:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
