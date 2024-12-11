@@ -79,7 +79,15 @@ const page = ({ foodItemData = null }) => {
       const data = await response.json();
 
       if (response.ok) {
+
+
+
+
         alert(form.id ? 'Food item updated successfully!' : 'Food item added successfully!');
+
+
+
+        
         setForm({ id: '', name: '', description: '', price: '', image: '', res_id: '' });
       } else {
         alert(`Error: ${data.error}`);
@@ -88,6 +96,13 @@ const page = ({ foodItemData = null }) => {
       console.error('Error saving food item:', error);
       alert('Something went wrong. Please try again.');
     }
+
+
+
+
+
+
+
   };
 
   const deleteFoodItem = async () => {
@@ -119,8 +134,21 @@ const page = ({ foodItemData = null }) => {
     }
   };
 
-  return (
+
+
+  return (<>
+
+
+
+
+
+
+
+
+
     <div className="w-[83%] max-lg:w-[65%] max-sm:w-[65%] bg-slate-600 bg-opacity-75 rounded-lg">
+      
+
       <Sidebarbtn />
 
       <div>
@@ -229,6 +257,7 @@ const page = ({ foodItemData = null }) => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 
