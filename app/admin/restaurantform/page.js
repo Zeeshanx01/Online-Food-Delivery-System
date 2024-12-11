@@ -5,6 +5,8 @@ import React from 'react';
 import Sidebarbtn from '../components/Sidebarbtn';
 
 const page = ({ restaurantData = null }) => {
+
+  const [restaurants, setRestaurants] = useState([]);
   // Initial state for form
   const [form, setForm] = useState({
     id: '',
@@ -13,6 +15,10 @@ const page = ({ restaurantData = null }) => {
     image: '',
   });
 
+
+
+
+
   // Populate form for edit
   useEffect(() => {
     if (restaurantData) {
@@ -20,7 +26,23 @@ const page = ({ restaurantData = null }) => {
     }
   }, [restaurantData]);
 
+  useEffect(() => {
+    const fetchRestaurants = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/restaurantCRUD/read'); // Update with your endpoint
+        const data = await response.json();
+        if (response.ok) {
+          setRestaurants(data);
+        } else {
+          console.error('Failed to fetch restaurants:', data.error);
+        }
+      } catch (error) {
+        console.error('Error fetching restaurants:', error);
+      }
+    };
 
+    fetchRestaurants();
+  }, []);
 
 
 
@@ -125,16 +147,21 @@ const page = ({ restaurantData = null }) => {
 
             <div className='flex gap-3'>
               {/* ID (Read Only for Edit Mode) */}
-              <input
+              {/* Restaurant Dropdown */}
+              <select
                 value={form.id}
-                onChange={handleChange} // Allow editing the ID field
-                placeholder="Add ID for Update (Leave it empty for add new)"
+                onChange={handleChange}
                 className="rounded-full border border-slate-500 w-full text-slate-200 bg-slate-700 font-semibold text-sm px-4 py-2"
-                type="text"
                 name="id"
                 id="id"
-                readOnly={!!restaurantData} // Set readOnly only if restaurantData exists (edit mode)
-              />
+              >
+                <option value="">Select Restaurant</option>
+                {restaurants.map((restaurant) => (
+                  <option key={restaurant.id} value={restaurant.id}>
+                    {restaurant.name}
+                  </option>
+                ))}
+              </select>
 
               <button
                 onClick={deleteRestaurant}

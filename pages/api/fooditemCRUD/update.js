@@ -17,15 +17,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // const { name, description, price, image } = req.body;
-  // console.log(req.body);
+  const { id, name, description, price, image, res_id } = req.body;
+  console.log(req.body);
 
-  const id = 1
-  const name = "Burger 1"
-  const description = "lorem"
-  const price = 1300
-  const image = 'restaurant/abc2.jpg'
-  const res_id = 1
+  // const id = 1
+  // const name = "Burger 1"
+  // const description = "lorem"
+  // const price = 1300
+  // const image = 'restaurant/abc2.jpg'
+  // const res_id = 1
 
 
   if (!id || !name || !description || !price || !image || !res_id) {

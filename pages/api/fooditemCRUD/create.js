@@ -24,15 +24,15 @@ export default async function handler(req, res) {
   }
 
 
-  // const { name, description, price, image } = req.body;
-  // console.log(req.body);
+  const { name, description, price, image, res_id } = req.body;
+  console.log(req.body);
 
 
-  const name = "Best Bite 3"
-  const description = "1"
-  const price = 1300
-  const image = 'restaurant/abc2.jpg'
-  const res_id = 1
+  // const name = "Best Bite 3"
+  // const description = "1"
+  // const price = 1300
+  // const image = 'restaurant/abc2.jpg'
+  // const res_id = 1
   
   if (!name || !description || !price || !image || !res_id) {
     return res.status(400).json({ error: 'Missing required fields' });
