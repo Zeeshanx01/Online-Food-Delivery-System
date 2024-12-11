@@ -26,6 +26,7 @@ const Restaurants = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
         <article>
           <section className="mt-6 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+
             {restaurants.map((restaurant) => (
               <article
                 key={restaurant.id}
@@ -43,6 +44,7 @@ const Restaurants = () => {
                 </div>
               </article>
             ))}
+            
           </section>
         </article>
       </section>

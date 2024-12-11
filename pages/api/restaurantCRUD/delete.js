@@ -3,8 +3,8 @@ import { createConnection } from 'mysql2/promise';
 // Function to create a MySQL connection
 async function connectToDatabase() {
   return createConnection({
-    host: process.env.DB_HOST ,
-    port: process.env.DB_PORT, 
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
@@ -16,10 +16,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // const { id } = req.body;
-  // console.log(req.body)
+  const { id } = req.body;
+  console.log(req.body)
 
-  const id = 2
+  // const id = 2
 
   if (!id) {
     return res.status(400).json({ error: 'id is required in the request body.' });

@@ -23,14 +23,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // const userdata = req.body;
-  // console.log(userdata);
 
-  // const { name, email, password, address } = userdata;
+  const { name, status, image } = req.body;
+  console.log(req.body);
+
+
   // const id = '1'
-  const name = "Best Bite 3"
-  const status = "1"
-  const image = 'restaurant/abc2.jpg'
+  // const name = "Best Bite 3"
+  // const status = "1"
+  // const image = 'restaurant/abc2.jpg'
   
   if (!name || !status || !image) {
     return res.status(400).json({ error: 'Missing required fields' });
