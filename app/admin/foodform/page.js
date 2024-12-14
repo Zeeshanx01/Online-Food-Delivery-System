@@ -87,7 +87,7 @@ const page = ({ foodItemData = null }) => {
 
 
 
-        
+
         setForm({ id: '', name: '', description: '', price: '', image: '', res_id: '' });
       } else {
         alert(`Error: ${data.error}`);
@@ -147,7 +147,7 @@ const page = ({ foodItemData = null }) => {
 
 
     <div className="w-[83%] max-lg:w-[65%] max-sm:w-[65%] bg-slate-600 bg-opacity-75 rounded-lg">
-      
+
 
       <Sidebarbtn />
 
@@ -238,8 +238,14 @@ const page = ({ foodItemData = null }) => {
 
               <button
                 onClick={deleteFoodItem}
-                className="bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2"
-              >
+                className=" duration-300 font-bold bg-red-600  hover:bg-red-500 text-red-100 flex justify-center items-center rounded-full px-6 py-2 text-xs  "
+              ><lord-icon
+                src="https://cdn.lordicon.com/skkahier.json"
+                trigger="loop"
+                delay="1500"
+                state="in-trash-empty"
+                colors="primary:#e4e4e4">
+                </lord-icon>
                 Delete
               </button>
             </div>
@@ -248,8 +254,8 @@ const page = ({ foodItemData = null }) => {
             <div className="flex justify-end">
               <button
                 onClick={saveFoodItem}
-                className="disabled:opacity-50 flex justify-center items-center bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2"
-              >
+                className="disabled:opacity-50 duration-300 flex justify-center items-center bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2"
+              ><lord-icon src="https://cdn.lordicon.com/jgnvfzqg.json" trigger="loop" colors="primary:#e4e4e4"></lord-icon>
                 {foodItemData ? 'Update Food Item' : 'Save Food Item'}
               </button>
             </div>

@@ -23,13 +23,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // const userdata = req.body;
-  // console.log(userdata);
 
-  // const { name, email, password, address } = userdata;
+  
+  // const { name, email, password, address } = req.nody;
+  // console.log(req.body);
+
   // const id = '1'
   const name = "ZZEESSHHAANN"
-  const email = "ZEESHAN"
+  const email = "ZEESHAN@"
   const password = '1231'
   const address = 'abcstreet2'
   console.log(name);

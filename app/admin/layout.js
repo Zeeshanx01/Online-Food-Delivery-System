@@ -11,6 +11,7 @@ export default function AdminLayout({ children }) {
     return (
         <>
             <div className="flex gap-2" >
+                
                 <Sidebar />
                 {children}
             </div>

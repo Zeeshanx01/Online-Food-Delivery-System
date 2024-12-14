@@ -165,7 +165,14 @@ const page = ({ restaurantData = null }) => {
 
               <button
                 onClick={deleteRestaurant}
-                className=" bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2">
+                className=" duration-300 font-bold bg-red-600  hover:bg-red-500 text-red-100 flex justify-center items-center rounded-full px-6 py-2 text-xs  ">
+                <lord-icon
+                  src="https://cdn.lordicon.com/skkahier.json"
+                  trigger="loop"
+                  delay="1500"
+                  state="in-trash-empty"
+                  colors="primary:#e4e4e4">
+                </lord-icon>
                 Delete
               </button>
 
@@ -204,8 +211,8 @@ const page = ({ restaurantData = null }) => {
             <div className="flex justify-end">
               <button
                 onClick={saveRestaurant}
-                className="disabled:opacity-50 flex justify-center items-center bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2"
-              >
+                className="disabled:opacity-50 duration-300 flex justify-center items-center bg-slate-600 hover:bg-slate-500 rounded-full px-6 py-2 text-xs font-bold gap-2"
+              ><lord-icon src="https://cdn.lordicon.com/jgnvfzqg.json" trigger="loop" colors="primary:#e4e4e4"></lord-icon>
                 {restaurantData ? 'Update Restaurant' : 'Save Restaurant'}
               </button>
             </div>

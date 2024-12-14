@@ -29,7 +29,7 @@ const products = () => {
       <div className="w-[70%] max-sm:w-fit bg-gray-5000 mx-auto  grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1  gap-4">
 
 
- 
+
 
 
 
@@ -37,11 +37,16 @@ const products = () => {
 
 
         {fooditems.map((fooditem) => (
-          <div key={fooditem.id} className=" shadow-md rounded-lg max-w-sm bg-gray-800 border-gray-700 bg-opacity-70 m-2">
+          <div key={fooditem.id} className=" shadow-md rounded-lg max-w-sm bg-gray-800 border-gray-700 bg-opacity-70 hover:bg-opacity-90 cursor-pointer duration-300 m-2">
             {/* Image */}
-            <a href="#">
-              <img className="rounded-t-lg p-8 bg-gray-8000" width={600} height={600} src='/restaurants/best-bite.jpg' alt="Product Image not found!" />
-            </a>
+            <div className="w-full h-96 relative overflow-hidden">
+              <img
+                className="rounded-t-lg p-8 bg-gray-8000 object-cover"
+                src={fooditem.image}
+                alt="Product Image not found!"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
 
             <div className="px-5 pb-5">
               {/* Name */}
@@ -88,7 +93,7 @@ const products = () => {
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">Rs.{fooditem.price}</span>
                 {/* button */}
                 <a href="#"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                  className="text-white duration-300 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
                   to cart</a>
 
               </div>
