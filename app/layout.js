@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,11 +36,21 @@ export default function RootLayout({ children }) {
       }} >
         <SessionWrapper>
 
+          {/* <Router>
+            <Routes>
+              <Route path="/restaurant/:restaurantId" element={<RestaurantDetail />} />
+              <Route path="/food-items" element={<FoodItems />} />
+            </Routes>
+          </Router> */}
+
+
           <Navbar />
           <div className="min-h-[85vh]">
             {children}
           </div>
           <Footer />
+
+          
         </SessionWrapper>
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
       </body>

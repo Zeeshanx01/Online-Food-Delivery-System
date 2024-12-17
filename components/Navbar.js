@@ -40,8 +40,8 @@ const Navbar = () => {
 
         <div className='relativee'>
 
-
-          {session && <>
+          {/* FOR ADMIN */}
+          {session && session.user.email === process.env.ADMIN_EMAIL && <>
             <button onClick={() => { setshowDropdown(!showDropdown) }} onBlur={() => { setTimeout(() => { setshowDropdown(false) }, 200) }} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="duration-500 text-white bg-gradient-to-r from-purple-500 via-purple-6000 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex justify-center items-center shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-full text-xs p-[3px]" type="button"><img className='rounded-full' width={'40px'} src={session.user.image} alt="profile image" />
             </button>
 
@@ -79,6 +79,57 @@ const Navbar = () => {
 
             </div>
           </>}
+
+
+
+
+
+
+          {/* FOR USER */}
+
+          {session && session.user.email !== process.env.ADMIN_EMAIL && <>
+            <button onClick={() => { setshowDropdown(!showDropdown) }} onBlur={() => { setTimeout(() => { setshowDropdown(false) }, 200) }} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="duration-500 text-white bg-gradient-to-r from-purple-500 via-purple-6000 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex justify-center items-center shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-full text-xs p-[3px]" type="button"><img className='rounded-full' width={'40px'} src={session.user.image} alt="profile image" />
+            </button>
+
+
+
+            <div id="dropdownInformation" className={`z-10 ${showDropdown ? "" : "hidden"} absolute top-20 max-sm:top-16 max-sm:right-20 bg-slate-800 divide-y divide-slate-600 text-slate-300 rounded-lg shadow w-fit dark:bg-gray-700 dark:divide-gray-600`}>
+
+              <div className="px-4 py-3 text-sm text-slate-300 font-bold dark:text-white">
+                <div>{session.user.name}</div>
+                <div className="font-medium truncate">{session.user.email}</div>
+              </div>
+
+              <ul className="py-2 text-sm text-slate-400 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                <li>
+                  <Link onClick={() => { setshowDropdown(!showDropdown) }} href="/profile" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">User Information</Link>
+                </li>
+                <li>
+                  <Link onClick={() => { setshowDropdown(!showDropdown) }} href="/cart" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Cart</Link>
+                </li>
+                <li>
+                  <Link onClick={() => { setshowDropdown(!showDropdown) }} href="#" className="duration-200 block px-4 py-2 hover:bg-slate-700 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
+                </li>
+
+              </ul>
+
+              <div className="py-2">
+                <button href="#" onClick={() => {
+                  signOut();
+                  setshowDropdown(!showDropdown);
+                }}
+                  className="w-full text-start duration-200 block px-4 py-2 text-sm text-slate-400 hover:bg-red-950 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</button>
+              </div>
+
+            </div>
+          </>}
+
+
+
+
+
+
+
 
           {!session && <Link href={'/login'}>
             <button type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-6000 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-xs px-4 py-2 text-center me-222 mb-222">Login</button>

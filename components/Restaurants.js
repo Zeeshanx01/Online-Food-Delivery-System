@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link'
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -26,7 +27,6 @@ const Restaurants = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
         <article>
           <section className="mt-6 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
-
             {restaurants.map((restaurant) => (
               <article
                 key={restaurant.id}
@@ -36,15 +36,14 @@ const Restaurants = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-55 group-hover:opacity-50 transition duration-300 ease-in-out"></div>
                 <div className="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
                   <h3 className="text-center">
-                    <a className="text-white text-2xl font-bold text-center" href="#">
+                    <Link href={`/products/${restaurant.id}`} className="text-white text-2xl font-bold text-center">
                       <span className="absolute inset-0"></span>
                       {restaurant.name}
-                    </a>
+                    </Link>
                   </h3>
                 </div>
               </article>
             ))}
-            
           </section>
         </article>
       </section>

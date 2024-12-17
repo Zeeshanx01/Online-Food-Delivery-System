@@ -53,7 +53,7 @@ const page = () => {
             {foodItems.map((food) => (
               <div
                 key={food.id}
-                className={`item w-full border-b-2 border-slate-600 p-4 hover:bg-slate-600 duration-200 bg-slate-600 flex justify-around gap-1 ${
+                className={`item w-full border-b-2 border-slate-600 p-4 hover:bg-slate-600 duration-200 bg-slate-600 flex justify-around gap-1 h-16 overflow-hidden text-center ${
                   food.status === 0 ? 'opacity-50' : ''
                 }`}
               >

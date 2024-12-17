@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-const products = () => {
+const page = () => {
   const [fooditems, setFooditems] = useState([])
 
 
@@ -13,7 +13,6 @@ const products = () => {
     }
     fetchfooditems();
   }, []);
-
 
   return (
     <div className='bg-gray-5000 bg-opacity-300'>
@@ -39,7 +38,7 @@ const products = () => {
         {fooditems.map((fooditem) => (
           <div key={fooditem.id} className=" shadow-md rounded-lg max-w-sm bg-gray-800 border-gray-700 bg-opacity-70 hover:bg-opacity-90 cursor-pointer duration-300 m-2">
             {/* Image */}
-            <div className="w-full h-96 relative overflow-hidden">
+            <div className="w-full h-96 max-2xl:h-72 max-xl:h-56 relative overflow-hidden">
               <img
                 className="rounded-t-lg p-8 bg-gray-8000 object-cover"
                 src={fooditem.image}
@@ -117,4 +116,4 @@ const products = () => {
   )
 }
 
-export default products
+export default page;
