@@ -16,11 +16,22 @@ const Sidebar = () => {
           <h1 className='font-bold text-3xl '>Admin Page</h1>
         </div>
         <ul className='flex flex-col gap-2 m-4'>
+          
           <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin"><li>Dashboard</li></Link>
-          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/foodform"><li>Food Items Form</li></Link>
+
           <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/adminfood"><li>Food Items</li></Link>
-          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/restaurantform"><li>Restaurant Form</li></Link>
+
+          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/foodform"><li>Manage Food Items</li></Link>
+
           <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/adminrestaurant"><li>Restaurants</li></Link>
+
+          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/restaurantform"><li>Manage Restaurants</li></Link>
+
+          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/tablepayment"><li>Payments</li></Link>
+
+          <Link className='bg-slate-800 rounded-md px-4 py-3 font-bold text-lg text-slate-300' href="/admin/tableorders"><li>Orders</li></Link>
+
+
         </ul>
       </div>
     {/* </div> */}

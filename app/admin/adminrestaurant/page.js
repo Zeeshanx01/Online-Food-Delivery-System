@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Sidebarbtn from '../components/Sidebarbtn'
+
 const page = () => {
   const [restaurants, setRestaurants] = useState([]);
 
