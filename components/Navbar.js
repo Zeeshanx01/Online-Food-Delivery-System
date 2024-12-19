@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className='relativee'>
 
           {/* FOR ADMIN */}
-          {session && session.user.email === process.env.ADMIN_EMAIL && <>
+          {session && session.user.email === 'zeeshanmunir13579@gmail.com'  && <>
             <button onClick={() => { setshowDropdown(!showDropdown) }} onBlur={() => { setTimeout(() => { setshowDropdown(false) }, 200) }} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="duration-500 text-white bg-gradient-to-r from-purple-500 via-purple-6000 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex justify-center items-center shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-full text-xs p-[3px]" type="button"><img className='rounded-full' width={'40px'} src={session.user.image} alt="profile image" />
             </button>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
 
           {/* FOR USER */}
 
-          {session && session.user.email !== process.env.ADMIN_EMAIL && <>
+          {/* {session.user.email !== 'zeeshanmunir13579@mail.com' && <>
             <button onClick={() => { setshowDropdown(!showDropdown) }} onBlur={() => { setTimeout(() => { setshowDropdown(false) }, 200) }} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="duration-500 text-white bg-gradient-to-r from-purple-500 via-purple-6000 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300   dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex justify-center items-center shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-full text-xs p-[3px]" type="button"><img className='rounded-full' width={'40px'} src={session.user.image} alt="profile image" />
             </button>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
               </div>
 
             </div>
-          </>}
+          </>} */}
 
 
 

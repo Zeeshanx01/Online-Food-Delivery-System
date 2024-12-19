@@ -2,9 +2,9 @@ import React from 'react'
 
 const Sidebarbtn = () => {
   return (
-    <div className='m-2'>
+    <div className='m-2 '>
     <button>
-      <img width={'40'} src="/menu.gif" alt="" />
+      <img className='md:hidden' width={'40'} src="/menu.gif" alt="" />
     </button>
   </div>
   )

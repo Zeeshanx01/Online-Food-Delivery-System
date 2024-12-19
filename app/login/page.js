@@ -19,7 +19,7 @@ const page = () => {
 
   if (session) {
     const router = useRouter()
-    if (session.user.email === process.env.ADMIN_EMAIL) {
+    if (session.user.email === 'zeeshanmunir13579@gmail.com') {
       router.push('/admin')
     }
     else {
