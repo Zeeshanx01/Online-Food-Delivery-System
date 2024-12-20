@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.6.8",
+    "@nextui-org/spinner": "^2.2.4",
     "mysql2": "^3.11.5",
     "next": "15.0.4",
     "next-auth": "^4.24.11",
+    "nextjs-toploader": "^3.7.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-toastify": "^10.0.6"

@@ -1,20 +1,21 @@
 import Image from "next/image";
 import Restaurants from "@/components/Restaurants";
 import Sidebar from "@/app/admin/components/Sidebar";
-
+// import {Spinner} from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 export default function Home() {
+  // return <Spinner />;
   return (
     <div>
-
       {/* <Sidebar /> */}
 
       <div className="h-full">
         {/* <!--Nav--> */}
-
+      
 
         {/* <!--Main--> */}
         <div className="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-          {/* <!--Left Col--> */}
+
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
               Orderr
@@ -63,7 +64,7 @@ export default function Home() {
 
           {/* <!--Right Col--> */}
           <div className="w-full xl:w-3/5 p-12 overflow-hidden">
-            <img className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6" src="macbook.svg" />
+            <img  className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6 " src="WinHome.png" />
           </div>
 
 

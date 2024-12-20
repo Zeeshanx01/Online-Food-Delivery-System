@@ -3,6 +3,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
+import { Suspense } from "react";
+import NextTopLoader from 'nextjs-toploader';
+
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const geistSans = localFont({
@@ -43,14 +46,14 @@ export default function RootLayout({ children }) {
             </Routes>
           </Router> */}
 
-
           <Navbar />
           <div className="min-h-[85vh]">
+            <NextTopLoader />
             {children}
+
           </div>
           <Footer />
 
-          
         </SessionWrapper>
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
       </body>

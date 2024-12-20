@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Sidebarbtn from '../components/Sidebarbtn';
 
 const page = () => {
@@ -12,11 +12,11 @@ const page = () => {
         // Fetch food items
         const foodRes = await fetch('http://localhost:3000/api/fooditemCRUD/read');
         const foodData = await foodRes.json();
-        
+
         // Fetch restaurants
         const restaurantRes = await fetch('http://localhost:3000/api/restaurantCRUD/read');
         const restaurantData = await restaurantRes.json();
-        
+
         // Create a lookup object for restaurants
         const restaurantLookup = restaurantData.reduce((acc, restaurant) => {
           acc[restaurant.id] = restaurant.name; // Map res_id to restaurant name
@@ -49,23 +49,24 @@ const page = () => {
             <h1 className='w-[15%] text-center'>Restaurant</h1>
           </div>
 
-          <div className="body min-h-[20vh] max-h-[60vh] overflow-auto">
-            {foodItems.map((food) => (
-              <div
-                key={food.id}
-                className={`item w-full border-b-2 border-slate-600 p-4 hover:bg-slate-600 duration-200 bg-slate-600 flex justify-around gap-1 h-16 overflow-hidden text-center ${
-                  food.status === 0 ? 'opacity-50' : ''
-                }`}
-              >
-                <h3 className='w-[10%] text-center'>{food.id}</h3>
-                <h3 className='w-[20%] text-center'>{food.name}</h3>
-                <h3 className='w-[30%] text-center'>{food.description}</h3>
-                <h3 className='w-[10%] text-center'>Rs.{food.price.toFixed(2)}</h3>
-                <h3 className='w-[15%] text-center'>{food.image}</h3>
-                <h3 className='w-[15%] text-center'>{restaurants[food.res_id] || "Unknown"}</h3>
-              </div>
-            ))}
-          </div>
+        
+            <div className="body min-h-[20vh] max-h-[60vh] overflow-auto">
+              {foodItems.map((food) => (
+                <div
+                  key={food.id}
+                  className={`item w-full border-b-2 border-slate-600 p-4 hover:bg-slate-600 duration-200 bg-slate-600 flex justify-around gap-1 h-16 overflow-hidden text-center ${food.status === 0 ? 'opacity-50' : ''
+                    }`}
+                >
+                  <h3 className='w-[10%] text-center'>{food.id}</h3>
+                  <h3 className='w-[20%] text-center'>{food.name}</h3>
+                  <h3 className='w-[30%] text-center'>{food.description}</h3>
+                  <h3 className='w-[10%] text-center'>Rs.{food.price.toFixed(2)}</h3>
+                  <h3 className='w-[15%] text-center'>{food.image}</h3>
+                  <h3 className='w-[15%] text-center'>{restaurants[food.res_id] || "Unknown"}</h3>
+                </div>
+              ))}
+            </div>
+         
         </div>
       </div>
     </div>
