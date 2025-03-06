@@ -20,14 +20,14 @@ const Dashboard = () => {
       try {
         // Fetch data for all tables
         const [userRes, restaurantRes, foodRes, orderRes, couponRes, reviewRes, paymentRes, deliveryRes] = await Promise.all([
-          fetch('http://localhost:3000/api/userCRUD/read'), // Endpoint for users
-          fetch('http://localhost:3000/api/restaurantCRUD/read'), // Endpoint for restaurants
-          fetch('http://localhost:3000/api/fooditemCRUD/read'), // Endpoint for food items
-          fetch('http://localhost:3000/api/orderCRUD/read'), // Endpoint for orders
-          fetch('http://localhost:3000/api/couponCRUD/read'), // Endpoint for coupons
-          fetch('http://localhost:3000/api/reviewCRUD/read'), // Endpoint for reviews
-          fetch('http://localhost:3000/api/paymentCRUD/read'), // Endpoint for coupons
-          fetch('http://localhost:3000/api/deliveryCRUD/read'), // Endpoint for reviews
+          fetch(`${process.env.NEXT_PUBLIC_URI}/userCRUD/read`), // Endpoint for users
+          fetch(`${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/read`), // Endpoint for restaurants
+          fetch(`${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/read`), // Endpoint for food items
+          fetch(`${process.env.NEXT_PUBLIC_URI}/orderCRUD/read`), // Endpoint for orders
+          fetch(`${process.env.NEXT_PUBLIC_URI}/couponCRUD/read`), // Endpoint for coupons
+          fetch(`${process.env.NEXT_PUBLIC_URI}/reviewCRUD/read`), // Endpoint for reviews
+          fetch(`${process.env.NEXT_PUBLIC_URI}/paymentCRUD/read`), // Endpoint for coupons
+          fetch(`${process.env.NEXT_PUBLIC_URI}/deliveryCRUD/read`), // Endpoint for reviews
         ]);
 
         const [

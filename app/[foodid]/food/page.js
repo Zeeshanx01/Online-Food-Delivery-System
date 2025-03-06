@@ -11,12 +11,12 @@ const FoodDetailPage = ({ params }) => {
     async function fetchFoodData() {
       try {
         // Fetch the selected food item
-        const foodRes = await fetch(`http://localhost:3000/api/foodCRUD/read?id=${id}`); // Assuming endpoint supports query params
+        const foodRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/foodCRUD/read?id=${id}`); // Assuming endpoint supports query params
         const foodData = await foodRes.json();
         setFoodItem(foodData);
 
         // Fetch all food items for related products
-        const relatedRes = await fetch('http://localhost:3000/api/foodCRUD/read');
+        const relatedRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/foodCRUD/read`);
         const relatedData = await relatedRes.json();
 
         // Filter related items (excluding the current food item)

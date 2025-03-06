@@ -29,7 +29,7 @@ const page = ({ restaurantData = null }) => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/restaurantCRUD/read'); // Update with your endpoint
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/read`); // Update with your endpoint
         const data = await response.json();
         if (response.ok) {
           setRestaurants(data);
@@ -57,7 +57,7 @@ const page = ({ restaurantData = null }) => {
 
   const saveRestaurant = async () => {
     try {
-      const url = form.id ? 'http://localhost:3000/api/restaurantCRUD/update' : 'http://localhost:3000/api/restaurantCRUD/create';
+      const url = form.id ? `${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/update` : `${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/create`;
       const method = form.id ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -93,7 +93,7 @@ const page = ({ restaurantData = null }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/restaurantCRUD/delete', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/delete`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ const page = ({ restaurantData = null }) => {
           {restaurantData ? 'Edit Restaurant' : 'Add Restaurant'}
         </h1>
 
-        <div className="bg-slate-800 drop-shadow-2xl mx-auto my-16 max-sm:mx-4 max-w-4xl rounded-xl text-white">
+        <div className="bg-slate-800 drop-shadow-2xl mx-auto my-16 max-sm:mx-4 maxw-4xl rounded-xl text-white">
           <div className="flex flex-col p-4 gap-4">
             {/* Restaurant Name */}
             <input

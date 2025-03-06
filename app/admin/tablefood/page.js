@@ -10,11 +10,11 @@ const page = () => {
     async function fetchData() {
       try {
         // Fetch food items
-        const foodRes = await fetch('http://localhost:3000/api/fooditemCRUD/read');
+        const foodRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/read`);
         const foodData = await foodRes.json();
 
         // Fetch restaurants
-        const restaurantRes = await fetch('http://localhost:3000/api/restaurantCRUD/read');
+        const restaurantRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/read`);
         const restaurantData = await restaurantRes.json();
 
         // Create a lookup object for restaurants

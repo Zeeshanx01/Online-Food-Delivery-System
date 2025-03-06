@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     // <div className=" flex justify-center  bg-white h-[10vh]">
-    <div className="w-full flex items-center justify-evenly bg-black bg-opacity-70 h-[10vh] sticky top-0 z-20">
+    <div className="w-full flex items-center justify-evenly bg-black bg-opacity-40 h-[10vh] sticky top-0 z-20 backdrop-blur-sm drop-shadow-2xl">
 
       <a className="flex items-center justify-center text-indigo-400 no-underline gap-1 hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
         <img width={'50'} src="/icon.gif" alt="" />

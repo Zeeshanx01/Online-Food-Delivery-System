@@ -25,7 +25,7 @@ const page = ({ foodItemData = null }) => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/restaurantCRUD/read'); // Update with your endpoint
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URI}/restaurantCRUD/read`); // Update with your endpoint
         const data = await response.json();
         if (response.ok) {
           setRestaurants(data);
@@ -44,7 +44,7 @@ const page = ({ foodItemData = null }) => {
   useEffect(() => {
     const fetchFoodItems = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/fooditemCRUD/read'); // Adjust endpoint
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/read`); // Adjust endpoint
         const data = await response.json();
         if (response.ok) {
           setFoodItems(data);
@@ -65,7 +65,7 @@ const page = ({ foodItemData = null }) => {
 
   const saveFoodItem = async () => {
     try {
-      const url = form.id ? 'http://localhost:3000/api/fooditemCRUD/update' : 'http://localhost:3000/api/fooditemCRUD/create';
+      const url = form.id ? `${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/update` : `${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/create`;
       const method = form.id ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -112,7 +112,7 @@ const page = ({ foodItemData = null }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/fooditemCRUD/delete', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URI}/fooditemCRUD/delete`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

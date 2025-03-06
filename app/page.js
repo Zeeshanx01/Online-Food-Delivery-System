@@ -2,7 +2,7 @@ import Image from "next/image";
 import Restaurants from "@/components/Restaurants";
 import Sidebar from "@/app/admin/components/Sidebar";
 // import {Spinner} from "@nextui-org/react";
-import { Spinner } from "@nextui-org/react";
+// import { Spinner } from "@nextui-org/react";
 export default function Home() {
   // return <Spinner />;
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       
 
         {/* <!--Main--> */}
-        <div className="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div className="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center roundedsm">
 
           <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
             <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">

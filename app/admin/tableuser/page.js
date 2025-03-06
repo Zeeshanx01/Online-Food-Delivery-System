@@ -7,7 +7,7 @@ const page = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const userRes = await fetch('http://localhost:3000/api/userCRUD/read'); // Update with your correct endpoint
+      const userRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/userCRUD/read`); // Update with your correct endpoint
       const userData = await userRes.json();
       setUserInfo(userData);
       console.log(userData);

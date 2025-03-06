@@ -8,7 +8,7 @@ const page = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const couponRes = await fetch('http://localhost:3000/api/couponCRUD/read'); // Update with your correct endpoint
+        const couponRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/couponCRUD/read`); // Update with your correct endpoint
         const couponData = await couponRes.json();
         setCouponInfo(couponData);
         console.log(couponData);

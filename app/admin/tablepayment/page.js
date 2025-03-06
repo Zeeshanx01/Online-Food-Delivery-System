@@ -7,7 +7,7 @@ const page = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const paymentRes = await fetch('http://localhost:3000/api/paymentCRUD/read'); // Update with your correct endpoint for payments
+      const paymentRes = await fetch(`${process.env.NEXT_PUBLIC_URI}/paymentCRUD/read`); // Update with your correct endpoint for payments
       const paymentData = await paymentRes.json();
       setPaymentInfo(paymentData);
       console.log(paymentData);
